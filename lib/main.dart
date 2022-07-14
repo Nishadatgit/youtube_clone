@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'youtube clone',
       theme: ThemeData.dark(),
-      home:const YoutubeHome()
+      home: YoutubeHome()
     );
   }
 }

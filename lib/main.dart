@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-//import 'package:youtube_clone/screens/home_page/youtube_home.dart';
+
 import 'package:flutter/services.dart';
-import 'package:youtube_clone/screens/main%20screens/nav_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_clone/screens/main%20screens/nav_screen.dart';
 
 void main(List<String> args) {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child:  MyApp()));
 }
 
 class MyApp extends StatelessWidget {

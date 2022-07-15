@@ -1,35 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:miniplayer/miniplayer.dart';
 import 'package:youtube_clone/data/datas.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:youtube_clone/screens/main%20screens/nav_screen.dart';
 
 class MyVideoCard extends ConsumerWidget {
-  const MyVideoCard({
-    Key? key,
-    required this.video,
-  }) : super(key: key);
+  const MyVideoCard(
+      {Key? key, required this.video, this.haspadding = false, this.ontap})
+      : super(key: key);
   final Video video;
+  final bool haspadding;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
       onTap: () {
         ref.read(selectedVideoProvider.notifier).state = video;
-       
+        ref
+            .read(minicontrollerprovider.notifier)
+            .state
+            .animateToHeight(state: PanelState.MAX);
+        if (ontap != null) ontap!();
       },
       child: Column(
         children: [
           Stack(
             children: [
-              Image.network(
-                video.thumbnailImg,
-                height: 220,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: haspadding ? 12.0 : 0),
+                child: Image.network(
+                  video.thumbnailImg,
+                  height: 220,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                   bottom: 8,
-                  right: 8,
+                  right: haspadding ? 20 : 8,
                   child: Container(
                     padding: const EdgeInsets.all(4),
                     color: Colors.black,

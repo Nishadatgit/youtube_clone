@@ -31,6 +31,8 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+lib/screens/home_page
+lib/data/youtube_home_data.dart
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -45,5 +47,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-lib/screens/home_page
-lib/data/youtube_home_data.dart
+

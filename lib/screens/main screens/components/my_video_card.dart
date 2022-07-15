@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:youtube_clone/data/new_data.dart';
+import 'package:youtube_clone/data/datas.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class MyVideoCard extends StatelessWidget {

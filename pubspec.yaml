@@ -30,8 +30,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_riverpod: ^1.0.4
   font_awesome_flutter: ^10.1.0
   google_fonts: ^3.0.1
+  miniplayer: ^1.0.1
+  timeago: ^3.2.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -64,8 +67,6 @@ flutter:
     - family: arial
       fonts:
         - asset: fonts/arial.ttf
-       
-          
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
